@@ -1,0 +1,866 @@
+@import "global/reset";
+@import "global/breakpoints";
+@import "global/colors";
+@import "global/typography";
+@import "global/flexbox";
+@import "global/utilities";
+@import "components/button";
+@import "components/navbar";
+@import "components/hero";
+@import "components/preloader";
+@import "../styles/ButterflyTemplate.scss";
+@import "../styles/PlantTemplate.scss";
+
+
+/* width */::-webkit-scrollbar {
+        width: 20px;
+    }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $hover-color;
+  }
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:active {
+    background: $active-color;
+  }
+
+
+.frame-content{
+    background: $background-color;
+    color: white;
+}
+.arrow{
+    position: absolute;
+    width: 5em;
+    left: 43%;
+    bottom: 10vh;
+}
+.padd{
+    padding: 0 0 0 0;
+    @include breakpoint(md){
+        padding: 0 0 0 50px;
+
+    }
+}
+.blog-article{
+    border-radius: 25px;
+    border: solid 1px rgb(202, 200, 200);
+    background-repeat: no-repeat;
+    background-position: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: 150% 150%;;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all .4s ease-in-out;
+    h1{
+        font-size: 30px;
+    }
+
+    &:hover{
+    background-size: 200% 200%;
+
+    }
+    &:hover h1{
+       color: rgb(187, 178, 178);
+    }
+    &:hover p{
+        color: rgb(187, 178, 178);
+     }
+
+
+
+
+}
+.cover{
+    width: 110%;
+    height: 110%;
+    background: black;
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    border-radius: 25px;
+    background: linear-gradient(180deg, rgba(23, 23, 24, 0.3) 0%, #222024 100%);
+}
+.feature{
+    height: 400px;
+    padding: 1em 1.5em;
+    @include breakpoint(md){
+        padding: 2em 3em;
+        height: 550px;
+    }
+
+   span{
+    font-size: 25px;
+    font-family: $primary-font;
+   }
+    h1{
+        font-size: 40px;
+        color: white;
+        @include breakpoint(md){
+            font-size: 35px;
+        }
+
+    }
+    p{
+        color: white;
+        font-style: 20px;
+
+    }
+    h2{
+        font-size: 50px;
+    }
+
+
+}
+.nnn{
+    width: calc(100% - 1vh);
+    @include breakpoint(md){
+        width: calc(100% - 1vh);
+    }
+    @include breakpoint(lg){
+        width: calc(50% - 1vh);
+    }
+
+
+
+}
+.normal {
+    height: 265px;
+    padding: 1em 1.5em;
+
+
+   p{
+    display: none;
+   }
+    h1{
+        font-size: 25px;
+        color: white
+    }
+
+    span{
+        font-family: $primary-font;
+        font-size: 20px;
+    }
+}
+.tag-flag{
+
+color: black;
+
+font-weight: bold;
+bottom: 0px;
+left: 0px;
+border-radius: 25px;
+max-width: 15em;
+align-self: flex-start;
+font-family: $secondary-font;
+margin-bottom: 1em;
+
+
+
+
+}
+.article{
+    height: 22.5vh;
+
+}
+.column{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.blog-content{
+
+    img{
+    width: 100%;
+    height:45vh;
+    object-fit: cover;
+    padding: 3vh 0;
+}
+h2{
+    padding: 1rem 0;
+    color: white;
+}
+h3{ color:#d5FFFd;}
+p{
+    padding: 1em 0;
+}
+}
+.web-content{
+
+    img{
+    width: 100%;
+    height:500px;
+    object-fit: cover;
+
+}
+h2{
+    padding: 5vh 0;
+}
+h3{
+    font-size: 30px;
+    padding: 0 0 0 0;
+}
+h4{
+    font-style: italic;
+    font-size: 25px;
+    font-weight: 800;
+}
+p{
+    padding: .25em 0 2em;
+}
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.card-container{
+    flex-wrap: wrap;
+    justify-content: center;
+    .card{
+        min-width: 250px;
+        img{
+            width: 100%;
+
+        }
+
+    }
+}
+.cardOne{
+    background: inherit;
+}
+.cardTwo{
+    background: #1B202B;
+    text-align: center;
+    div{
+        text-align: center;
+    }
+    img {
+        height: 40px;
+
+
+    }
+}
+
+.icon{
+    width: 75px;
+}
+.tag-box{
+    padding: 1em;
+    font-size: 20px;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    margin: 20px;
+    &:hover{
+        background-color: $hover-color !important;
+    }
+    &:active{
+        background-color: $active-color !important;
+    }
+
+
+
+    color: white;
+    p{
+        font-size: 20px;
+    }
+}
+.main-wrap{
+    padding: 0 3vw;
+    background-color: $background-color;
+
+    @include breakpoint(md){
+        padding: 0 5vw;
+    }
+    @include breakpoint(lg){
+        padding: 0 10vw;
+    }
+
+
+}
+
+
+.blog-wrap{
+    padding: 20vh 0vw;
+    ;
+
+
+    @include breakpoint(md){
+        padding: 20vh 2vw;
+    }
+    @include breakpoint(lg){
+        padding: 20vh 3vw;
+    }
+
+
+}
+
+.cloud{
+    padding-top: 110px ;
+    padding-bottom: 110px ;
+}
+
+.button-container{
+    margin-top: 1em;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+
+
+    @include breakpoint(sm){
+        flex-direction: row;
+        margin-top: 2.5em;
+        width: 100%;
+        gap: 3em;
+    }
+}
+
+
+.fws-card{
+    h3{
+        color: black;
+
+    }
+    p{
+        color: black;
+
+    }
+}
+
+.website{
+    img{
+        height: 160px;
+    }
+
+}
+
+label p{
+    font-size: 25px;
+    margin-bottom: .5rem;
+    color: white;
+}
+input, textarea{
+    font-size: 25px;
+    padding: .25rem;
+    margin-bottom: 0;
+    width: 100%;
+    background-repeat: 25px;
+
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+    outline: 5px solid  rgb(255, 0, 191);
+}
+
+
+
+
+
+.light-text{
+   p, a{
+        color: white
+    }
+}
+.dark-text{
+  li, p{
+         color: black
+     }
+ }
+ .light-text{
+    h1, h2, p, a{
+          color: white
+      }
+  }
+
+ .light-nav{
+    background: #280984;
+ }
+
+.tag-bar{
+
+    a, p{
+        padding: .5rem 2rem;
+        margin: .5rem;
+        color: #b3b8be;
+        font-family: $primary-font;
+        font-weight: bold;
+        border-radius: 50px;
+        background:  #47494f;
+    }
+}
+.t1:hover{
+    background: #4deeea;
+
+}
+.t1:hover .all{
+    background: red;
+}
+.t2:hover{
+    background: #ffb6c1;
+}
+.t3:hover{
+    background: lightgoldenrodyellow;
+}
+.t4:hover{
+    background: #98ffc1;
+}
+
+.col-4-gap {
+    width:100%;
+    @include breakpoint(md){
+      width: 40%;
+
+    min-width:300px;
+
+     }  }
+.gap-3{
+    gap: 2%;
+}
+.col-8-gap {
+    width:100%;
+    @include breakpoint(md){
+      width: 60%;
+    min-width:300px;
+      margin-bottom: 20px;
+     }  }
+.gap-3{
+    gap: 2%;
+}
+.b-pad{
+    padding-bottom: 100px;
+}
+
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+
+    position: relative;
+    margin: 10px;
+    perspective: 800px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    min-width: 250px;
+    width: 100%;
+    @include breakpoint(md){
+    width: 20%;
+    margin-bottom: 5rem;
+    }
+  }
+
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    backface-visibility: hidden;
+    background: #ECE2CE;
+    border: 2px solid black;
+    p{
+        color: black;
+    }
+
+    img{
+        width: 50px;
+    }
+  }
+
+  .back {
+    transform: rotateY(180deg);
+    display: none;
+  }
+
+  .card.flipped .back {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  .card a {
+    font-size: 0.9rem;
+    color: blue;
+    text-decoration: underline;
+  }
+
+  .card a:hover {
+    color: darkblue;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .projects-image{
+        width: 200%;
+        @include breakpoint(md){
+            width: 100%;
+
+            }
+  }
+  .foot-links{
+    img{
+        width: 50px;
+        margin: 0 1rem;
+    }
+  }
+.butterfly-name{
+    h1{
+
+            font-size: 35px;
+            @include breakpoint(xs){
+                font-size: 30px;
+            }
+        @include breakpoint(md){
+            font-size: 45px;
+        }
+        @include breakpoint(lg){
+            font-size: 55px;
+        }
+        @include breakpoint(xlg){
+            font-size: 60px;
+        }
+    }
+    h2{
+
+        font-size: 20px;
+        margin-top: -70px;
+        @include breakpoint(xs){
+            font-size: 18px;
+            margin-top: -80px;
+        }
+    @include breakpoint(md){
+        font-size: 25px;
+        margin-top: -60px;
+    }
+    @include breakpoint(lg){
+        font-size: 30px;
+        margin-top: -50px;
+
+    }
+    @include breakpoint(xlg){
+        font-size: 30px;
+        margin-top: -45px;
+    }
+}
+}
+  .sci-name{
+    color: white;
+    background: orange;
+margin-left: -200px;
+padding-left: 200px;
+
+border-radius: 25px;
+position: absolute;
+
+top: 120px;
+font-weight: 400;
+padding-right: 100px;
+padding: .25rem 100px .25rem 200px;
+
+
+
+  }
+  .lifespan{
+    color: white;
+    background: $primary-color;
+margin-right: -200px;
+
+padding: .25rem 200px .25rem 100px;
+border-radius: 25px;
+font-weight: 600;
+font-size:25px;
+  }
+
+  .bold{
+    font-weight: bold;
+    color: $primary-color;
+  }
+  .toxicity{
+    color: rgb(242, 0, 48);
+    border: solid 2px  rgb(242, 0, 48);
+    padding: .5rem;
+  }
+.flex-5{
+    background: $background-color;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+gap:20px;
+    padding-top: 85px;
+    padding-bottom: 85px;
+
+
+
+
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+  gap: 1.5rem;
+
+  @include breakpoint(md){
+    padding-top: 100px;
+}
+    span{
+            padding-right: 2rem;
+    }
+}
+
+.info{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    p{
+        padding: 1rem 0;
+    }
+}
+.safe{
+    font-weight: bold;
+    color: Green;
+}
+.flower-container{
+    width: 100%;
+    margin: 20px 0;
+padding: 15px;
+    text-align: center;
+    border: 5px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+
+h3{
+font-size: 30px;
+color: white;
+font-weight: 200;
+}
+p{
+    font-size: 20px;
+    color: white;
+}
+    &:hover {
+        background-color: rgb(238, 231, 243);
+padding: 5px;
+border-width: 10px;
+
+
+
+      }
+    @include breakpoint(sm){
+        width: 45%;
+
+        }
+        @include breakpoint(md){
+            width: 30%;
+
+            }
+        @include breakpoint(lg){
+            width: 23%;
+
+            }
+
+}
+
+.plants-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 3%;
+  }
+
+
+
+  // Contact
+
+
+.form-btn{
+    padding: .5em 1em;
+    background: $primary-color;
+    color: white;
+    font-family: $primary-font;
+    font-weight: 700;
+    &:hover{
+      background-color: $secondary-color;
+    }
+    }
+
+    form{
+      text-align: center;
+      color: var(--textNormal);
+
+
+      label{
+        font-family: $primary-font;
+        @include breakpoint(md){
+          margin-right: 1.5em;
+          text-align: left;
+          color: white;
+          font-weight: 300;
+        }
+
+      }
+    }
+    .field{
+      margin:  0;
+      text-align: left;
+
+      @include breakpoint(md){
+
+      margin: 20px 0 0;
+    }
+    }
+
+    .primary-button{
+        padding: .5em 3em;
+        font-weight: bold;
+        font-size: 20px;
+        background: #60edab;
+        border-radius: 10px;
+        box-sizing: border-box;
+        box-shadow: .12em .20em .12em rgba(0, 0, 0, 0.25);
+        margin: 50px 0 0 0;
+        color: black;
+        cursor: pointer;
+        ;
+        font-family: $primary-font;
+        &:hover{
+            background: $hover-color;
+            color: rgb(163, 160, 160);
+            transition:.2s
+        }
+        &:active{
+            box-shadow: .08em .16em .08em rgba(0, 0, 0, 0.55);
+        }
+        @media (min-width: 1024px) {
+            font-size: 23px;
+          }
+      }
+      .contact-input{
+        font-family: $secondary-font;
+       font-size: 25px;
+       &:focus{
+        border: 5px solid $active-color;
+       }
+
+
+      }
+      .control{
+        margin: .5rem 0 0 0 ;
+      }
+
+      .gap-4{
+        gap: 0;
+        @include breakpoint(md){
+         gap: 50px;
+      }
+
+
+      }
+
+.needs{
+
+        border-radius: 25px;
+        background: white;
+        padding: 2.5em;
+        width: 100%;
+        @include breakpoint(sm){
+            width: 100%;
+          }
+        @include breakpoint(md){
+           width: 48%;
+         }
+         @include breakpoint(lg){
+            width: 32%;
+          }
+div{
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+        h3{
+            font-size: 35px;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            text-align: left;
+            max-width: 450px;
+        }
+    }
+
+.bg-color{
+    background: #01062e;
+}
+
+
+.hover-line-container {
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.h-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 10px;
+    background-color: rgb(37, 220, 17);
+    /* Add animation property */
+    animation: expandLine 0.8s forwards;
+}
+
+/* Define keyframes for the animation */
+@keyframes expandLine {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Optional: Maintain the hover effect */
+.hover-line-container:hover .line {
+    width: 100%;
+}
+.hover-line-container:hover  {
+   color: rgb(183, 249, 198);
+  font-weight: 700;
+}
+
+.green{
+    background: rgb(219, 255, 219)
+}

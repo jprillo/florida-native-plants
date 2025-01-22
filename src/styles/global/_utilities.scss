@@ -1,0 +1,95 @@
+.h-pad{
+    padding-left: 5vw;
+    padding-right: 5vw;
+    @include breakpoint(sm){
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    @include breakpoint(md){
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+    @include breakpoint(lg){
+        padding-left: 7vw;
+        padding-right: 7vw;
+     }
+     @include breakpoint(xlg){
+        padding-left: 9vw;
+        padding-right: 9vw;
+     }
+
+
+}
+.v-pad{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.gap-1em{
+    gap: 1em;
+}
+.gap-1{
+    gap: 60px;
+
+    @include breakpoint(md){
+       gap: 7vw;
+    }
+}
+.gap-2{
+gap: 50px;
+}
+.gap-3em{
+    gap: 3em;
+}
+.gap-5em{
+    gap: 5em;
+}
+.pad-3em{
+    padding:  3em;
+}
+.pad-10{
+    padding: 10vh 10vw;
+}
+.pad-5{
+    padding: 5vh 5vw;
+}
+
+.v-pad-5{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.h-pad-10{
+padding-left: 10vh;
+padding-right: 10vh;
+}
+.v-pad-1{
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+.v-pad-10{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+.alt-background{
+    background: #1B202B;
+}
+
+
+.vertical-padding{
+    padding:10vh 0;
+}
+
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+
+
+
+.mobile-hide{
+display: none;
+@include breakpoint(md){
+   display: block;
+}
+}

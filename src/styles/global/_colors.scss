@@ -1,0 +1,50 @@
+$primary-color: #2A094B;
+$secondary-color:#CFFFD4;
+$text-color: black;
+$background-color: #F9EAFF;
+$accent-color: #800080;
+$light-color1: white;
+$light-color2: #DFECF3;
+$dark-color1: #497D9A;
+$dark-color2: #1b0f0f;
+$hover-color:$secondary-color;
+$hover-color2: rgb(255, 196, 0);
+$active-color:#98FFC1;
+
+.light-back2{
+    background:  var(--sbg); ;
+}
+.back{
+    background: var(--bg);
+}
+.light-back1{
+    background: $light-color1;
+}
+.secondary-back{
+    background: $secondary-color;
+}
+.primary-back{
+    background: $primary-color;
+}
+.secondary-color{
+    color: $secondary-color;
+}
+.primary-color{
+    color: $primary-color;
+}
+
+
+/* Nav Colors */
+$nav-color: inherit;
+$top-nav-color: #ffffff;
+$nav-text-color: white;
+$top-nav-text-color: #fffefe;
+
+$nav-contact-color:$secondary-color;
+$nav-contact-text-color:white;
+$burger-color: $secondary-color;
+$button-text: black;
+
+
+
+

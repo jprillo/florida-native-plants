@@ -1,0 +1,95 @@
+@use "sass:math";
+
+ 
+ .flex{
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(md){       
+            flex-direction: row;           
+           }  
+           &-center{
+               justify-content: center;
+               align-content: center;
+               display: flex;
+               flex-direction: column;
+               @include breakpoint(md){       
+                   flex-direction: row;           
+                  }  
+           }  
+           &-reverse{            
+            display: flex;
+            flex-direction: column-reverse;
+            @include breakpoint(md){       
+                flex-direction: row;           
+               } 
+        }        
+    }
+
+    .col {
+      &-1 {
+          width:100%;
+      @include breakpoint(md){   
+        width: math.div(100%, 12);    
+             
+         }  }
+
+      &-2 {
+        width:100%;
+        @include breakpoint(md){       
+          width: math.div(100%, 6);        
+         }  }      
+      
+      &-3 {
+        width:100%;
+        @include breakpoint(md){       
+          width: math.div(100%, 4);     
+         }  }
+      &-4 {
+          width:100%;
+          @include breakpoint(md){       
+            width: math.div(100%, 3);        
+           }  }
+           &-5 {
+            width:100%;
+        @include breakpoint(md){       
+          width: math.div(100%, 2.4);         
+           }  }
+
+        &-6 {
+          width:100%;
+          @include breakpoint(md){       
+            width: math.div(100%, 2);       
+           }  }      
+        
+        &-7 {
+          width:100%;
+          @include breakpoint(md){       
+            width: math.div(100%, 1.714285714285714);   
+           }  }
+        &-8 {
+            width:100%;
+            @include breakpoint(md){       
+              width: math.div(100%, 1.5);      
+             }  }
+        &-9 {
+              width:100%;
+          @include breakpoint(md){       
+            width: math.div(100%, 1.33333333333333);        
+             }  }
+  
+          &-10 {
+            width:100%;
+            @include breakpoint(md){       
+              width: math.div(100%, 1.2);       
+             }  }      
+          
+          &-11 {
+            width:100%;
+            @include breakpoint(md){       
+              width: math.div(100%, 1.090909090909091);    
+             }  }
+          &-12 {
+              width:100%;
+                }
+  }
+

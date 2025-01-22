@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans&display=swap');
+  $primary-font: 'Montserrat', sans-serif;
+  $secondary-font: 'Open Sans', sans-serif;
+$redacted: 'Redacted', cursive;
+
+.redacted{
+  font-family: $redacted;
+  margin: 0 1em;
+}
+  h1, h2, h3, h4, h5 {
+    font-family: $primary-font;
+    color: $primary-color;
+   font-weight: normal;
+margin-bottom: .25em;
+
+  }
+
+   li{
+    font-family:$primary-font;
+    font-size: 20px;
+    color: white;
+    @include breakpoint(md){
+      font-size: 22px;
+     }
+
+  }
+
+
+h1{
+
+  font-size: clamp(30px, 5.5vw, 90px);
+  font-family: $primary-font;
+  line-height: 105%;
+
+
+
+}
+
+
+
+
+
+  h2{
+    font-family: $primary-font;
+   font-weight: bold;
+   font-size: 30px;
+   @include breakpoint(sm){
+    font-size: 40px;
+}
+@include breakpoint(md){
+    font-size: 35px;
+}
+@include breakpoint(lg){
+    font-size: 40px;
+}
+@include breakpoint(xlg){
+    font-size: 45px;
+}
+  }
+  h3{
+
+    font-size: 30px;
+    font-weight: bold;
+
+    @include breakpoint(md){
+      font-size: 40px;
+
+     }
+  }
+  .secondary-font{
+    color: $secondary-color
+  }
+
+
+  h4{
+    color: black;
+    font-size: 30px;
+
+    text-transform: capitalize;
+    @include breakpoint(md){
+      font-size: 30px;
+
+
+     }
+  }
+
+
+  h5{
+    color: $primary-color;
+    font-size: 18px;
+    text-align: left;
+    font-family: $primary-font;
+    @include breakpoint(md){
+      font-size: 20px;
+
+     }
+  }
+
+  p{
+    font-size: 18px;
+    color: $text-color;
+    font-family: $secondary-font;
+
+  @include breakpoint(md){
+      font-size: 20px;
+  }
+  @include breakpoint(lg){
+      font-size: 20px;
+  }
+  @include breakpoint(xlg){
+      font-size: 22px;
+  }
+  }
