@@ -1,0 +1,99 @@
+/* Container Styles */
+.butterfly-container {
+    overflow-x: hidden;
+    padding: 1rem;
+  }
+
+  /* Layout Styles */
+  .flex {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .pad-top {
+    padding-top: 1rem;
+  }
+
+  .b-pad {
+    padding-bottom: 1rem;
+  }
+
+  .h-pad {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .col-7 {
+    width: 70%;
+    position: relative;
+  }
+
+  .col-5 {
+    width: 30%;
+    padding: 1rem;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .col-9 {
+    width: 75%;
+  }
+
+  .col-3 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* Header Styles */
+  .butterfly-name h1 {
+    padding-bottom: 1rem;
+  }
+
+  .sci-name {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  /* Image Styles */
+  .h-image {
+    width: 100%;
+  }
+
+  .image-credit {
+    font-size: 18px;
+    margin-top: 1rem;
+  }
+
+  /* Box Styles */
+  .stats {
+    padding: 1rem;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  /* Additional Info Boxes */
+  .info-box {
+    background-color: $primary-color;
+    padding: 2rem;
+    border-radius: 25px;
+    color: white;
+
+    h3 {
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+
+  .ad-box {
+    border: 4px solid blue;
+    padding: 1rem;
+    border-radius: 25px;
+  }
+

@@ -1,0 +1,84 @@
+
+h1{
+
+     font-size: 45px;
+    font-family: $primary-font;
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: .1em;
+    @include breakpoint(sm){
+        font-size: 60px;
+    }
+    @include breakpoint(md){
+        font-size: 50px;
+    }
+    @include breakpoint(lg){
+        font-size: 55px;
+    }
+    @include breakpoint(xlg){
+        font-size: 60px;
+    }
+
+
+  }
+
+.hero{
+    text-align: left;
+    background-color: inherit;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    h1{
+        color: $accent-color;
+    }
+    img{
+        border-radius: 25px;
+     border: solid 5px primary;
+    }
+
+
+
+
+
+}
+.pad-top{
+    padding-top: 70px;
+    @include breakpoint(md){
+        padding-top: 50px;
+
+    }
+
+}
+.hero-image{
+    padding: 0 7vw;
+    @include breakpoint(sm){
+        padding: 0 10vw 0 30vw;
+    }
+    @include breakpoint(md){
+        padding: 0 0 0 0;
+    }
+}
+.subheading{
+    font-family: $secondary-font;
+    color: rgb(168, 233, 168);
+    font-size: 40px;
+    padding: 10px 0 20px;
+    font-weight: bold;
+
+
+    @include breakpoint(sm){
+        font-size: 30px;
+        padding: 0;
+    }
+    @include breakpoint(md){
+        font-size: 22px;
+    }
+    @include breakpoint(lg){
+        font-size: 25px;
+    }
+    @include breakpoint(xlg){
+        font-size: 28px;
+    }
+}
+
+

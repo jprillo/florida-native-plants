@@ -1,0 +1,232 @@
+/************ BURGER ***********************/
+#hamburger-wrap{
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  z-index:1000;
+  margin-left: auto;
+
+
+  @include breakpoint(md){
+      display: none;
+  }
+  }
+  .burger-open{
+  width: 100%;
+  height: 100%;
+  }
+  .line {
+      position: absolute;
+      height: 10%;
+      width:70%;
+      background:#98FFC1;
+      box-shadow: .5px .5px black;
+      border-radius:10px;
+      transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+      }
+      .line01 {
+      top:25%;
+      }
+      .line02 {
+      top:47%;
+      }
+      .line03 {
+      top:69%;
+      }
+
+      .burger-close .line {
+        box-shadow: none;
+        background:#98FFC1;
+        }
+      .burger-close .line01 {
+      transform:rotate(45deg);
+      top:49%;
+      }
+      .burger-close .line02, .burger-close .line03 {
+      transform:rotate(-45deg);
+      top:49%;
+      }
+
+
+/**************************************END HAMBURGER*******************************/
+.logo-wrap {
+padding:0;
+margin:0;
+display: flex;
+align-items: center;
+  &:hover{
+    opacity: .5;
+  }
+}
+.navagation-wrap.mobile-wrap #hamburger-wrap{
+position: fixed;
+z-index: 100000;
+right: 25px;
+} /*Hack for keeping hamburger in place  */
+#active{
+color: $secondary-color;
+}
+ .navagation-wrap{
+  background: $primary-color;
+ }
+
+#main-nav-wrap{
+
+display: flex;
+justify-content: space-between;
+
+  transition: background .5s;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(md){
+    padding: 10px 0 0;
+    transition: background 0s;
+  }
+  @include breakpoint(lg){
+    padding: 10px 0 0;
+}
+
+
+
+.mobile-phone{
+margin-left: 25px;
+@include breakpoint(md){
+  display: none;
+}
+
+}
+}
+
+
+.responsive-nav.mobile-nav .nav{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 18vh 10vw 10% 10vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #2A094B;
+  z-index: 1000;
+  text-align: left;
+  @include breakpoint(md){
+      padding:0;
+      width: auto;
+      position: relative;
+      flex-direction: row;
+      height: auto;
+      background: #2A094B;
+      margin: .75em;
+  }
+}
+.set{
+  display: flex;
+  align-items: center;
+}
+.responsive-nav.mobile-nav .nav a{
+
+  font-family: $primary-font;
+  font-weight: 200;
+  color: $nav-text-color;
+  font-size: 50px;
+
+  margin:  20px 0;
+  @include breakpoint(md){
+      font-weight: 500;
+      font-size: 20px;
+      margin: .5em;
+      padding: .5em;
+      color: $nav-text-color;
+  }
+  &:hover {
+    color: $light-color2;
+  }
+  &:active {
+    color: $active-color;
+  }
+
+}
+.nav{
+  position: fixed;
+  right: -100vw;
+  transition: all .3s ease-in-out;
+
+  @include breakpoint(md){
+      width: auto;
+      position: relative;
+      margin: .75em;
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      background: inherit;
+      left: 0;
+      transition: none;
+
+
+  }
+
+}
+.nav a{
+  @include breakpoint(md){
+      font-family: $primary-font;
+      font-weight: 200;
+      font-size: 20px;
+      line-height: 120%;
+      margin: 0 .5em;
+      padding: 0 .5em;
+      text-transform:capitalize;
+      color: white;
+  }
+  &:hover {
+    color: $hover-color;
+
+  }
+  &:active {
+    color: $primary-color;
+  }
+
+}
+.active{
+  color: $active-color !important;
+}
+.nav-button-container{
+  display: flex;
+  justify-content: center;
+  @include breakpoint(md){
+    display: block;
+  }
+
+}
+.nav-button {
+    display: none;
+margin-top: 20px;
+    @include breakpoint(md){
+      margin-top: -27px;
+      display: block;
+
+      box-sizing:border-box;
+      padding: .25em .75em;
+    background: none;
+      border: 3px solid $primary-color;
+      color: $primary-color;
+      font-family:$secondary-font;
+      font-size: 20px;
+      margin-left: .5em;
+      cursor: pointer;
+      &:hover {
+
+        font-weight: normal;
+        background: $hover-color;
+        border-color: $hover-color;
+      
+
+      }
+      &:active {
+        color: $active-color;
+      }
+
+    }
+}

@@ -1,0 +1,191 @@
+.button, .contact-button{   
+   color: #fff;
+   border-radius: 5px;
+   font-weight: bold;
+   background: transparent;
+  
+   cursor: pointer;
+   transition: all 0.2s ease;
+   position: relative;
+   display: flex; 
+   gap: .5rem;
+   outline: none;
+   padding: .2rem 1rem;  
+   width: 100%;
+ 
+    @include breakpoint(md){
+        padding: .75rem 2rem;  
+    }
+    &.primary{
+     background: $primary-color;     
+     z-index: 1; 
+     img{
+        width: 100%;
+        margin-top: 4px;
+     }        
+     p{
+         color: white;
+         font-size: 18px;
+         font-weight: bold;
+         font-family: $primary-font;
+         @include breakpoint(sm){        
+            font-size: 30px;
+        }
+        @include breakpoint(md){        
+            font-size: 20px;
+        }
+        @include breakpoint(lg){        
+            font-size: 23px;
+        }
+        @include breakpoint(xlg){        
+            font-size: 26px;
+        }
+     }    
+     &.sm{
+        img{
+            width: 80%;
+            margin-top: 3px;
+         }
+        p{
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: $primary-font; 
+            
+           
+            @include breakpoint(sm){        
+               font-size: 25px;
+           }
+           @include breakpoint(md){        
+               font-size: 18px;
+           }
+           @include breakpoint(lg){        
+               font-size: 20px;
+           }
+           @include breakpoint(xlg){        
+               font-size: 20px;
+           }
+        }   
+     }
+    }
+
+
+    &.secondary{
+   background-color: black;
+     cursor: pointer;
+     z-index: 1;
+     border: 1px solid white;
+     @include breakpoint(md){        
+        background-color: inherit; 
+    }
+
+    img{
+        width: 100%;
+        margin-top: 4px;
+     }   
+     &.sm{
+        background: black;
+        border-color: black;
+        img{
+            width: 80%;
+         }   
+        p{
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: $primary-font;
+            @include breakpoint(sm){        
+               font-size: 22px;
+               color: white;
+           }
+           @include breakpoint(md){        
+               font-size: 18px;
+           }
+           @include breakpoint(lg){        
+               font-size: 20px;
+           }
+           @include breakpoint(xlg){        
+               font-size: 20px;
+           }
+        }   
+     }
+
+     p{
+         color: white;
+         font-size: 18px;
+         font-weight: bold;
+         font-family: $primary-font;
+         @include breakpoint(sm){        
+            font-size: 30px;
+        }
+        @include breakpoint(md){        
+            font-size: 20px;
+        }
+        @include breakpoint(lg){        
+            font-size: 23px;
+        }
+        @include breakpoint(xlg){        
+            font-size: 26px;
+        } 
+        
+     }  
+     
+     &.nav-button{
+      display: flex;
+      align-items: center;
+      p{
+         color: white;
+         font-size: 18px;
+         
+         font-family: $secondary-color;
+         @include breakpoint(md){       
+            font-size: 20px;
+                   
+           } 
+     } 
+     } 
+     
+    
+    }   
+    @include breakpoint(md){
+     padding: .5rem 2rem;
+    }
+
+  
+   }
+
+
+
+.button:active{
+   top: 2px;
+}
+
+.btn-icon-contain {
+   transition: 0.70s;
+   width: 20px;   
+   @include breakpoint(sm){        
+      width: 30px;
+  }
+  @include breakpoint(md){        
+   width: 30px;
+  }
+  @include breakpoint(lg){        
+   width: 35px;
+  }
+  @include breakpoint(xlg){        
+   width: 35px;
+  }
+
+}
+.nav-button .btn-icon-contain{
+width: 25px;
+padding-top: 3px;
+}
+.button:hover .btn-icon-contain{
+   transition: 0.70s;  
+   transform: rotate(360deg);
+ }
+ .button:hover{
+  background: $hover-color;
+ }
+
