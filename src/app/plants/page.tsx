@@ -1,39 +1,48 @@
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
-
-import RootLayout from "../../app/layout"
 
 type Plant = {
   id: string;
   commonName: string;
 };
 
-export default function Plants() {
-  const files = fs.readdirSync(path.join("content/plants"));
+export default async function Plants() {
+  const plantsDir = path.join(process.cwd(), "content/plants");
 
-  const plants = files.map((filename) => {
-    const fileContents = fs.readFileSync(path.join("content/plants", filename), "utf8");
-    const { data } = matter(fileContents);
-    return {
-      id: filename.replace(".mdx", ""),
-      commonName: data.commonName,
-    };
-  });
+  try {
+    // Read filenames asynchronously
+    const filenames = await fs.readdir(plantsDir);
 
-  return (
-    <RootLayout>
-    <main>
-      <h1>Florida Native Plants</h1>
-      <ul>
-        {plants.map((plant) => (
-          <li key={plant.id}>
-            <Link href={`/plants/${plant.id}`}>{plant.commonName}</Link>
-          </li>
-        ))}
-      </ul>
-    </main>
-    </RootLayout>
-  );
+    // Read file contents and extract data asynchronously
+    const plants: Plant[] = await Promise.all(
+      filenames.map(async (filename) => {
+        const filePath = path.join(plantsDir, filename);
+        const fileContents = await fs.readFile(filePath, "utf8");
+        const { data } = matter(fileContents);
+
+        return {
+          id: filename.replace(".mdx", ""),
+          commonName: data.commonName,
+        };
+      })
+    );
+
+    return (
+      <main>
+        <h1>Florida Native Plants</h1>
+        <ul>
+          {plants.map((plant) => (
+            <li key={plant.id}>
+              <Link href={`/plants/${plant.id}`}>{plant.commonName}</Link>
+            </li>
+          ))}
+        </ul>
+      </main>
+    );
+  } catch (error) {
+    console.error("Error reading plant data:", error);
+    return <p>Failed to load plants. Please try again later.</p>;
+  }
 }
