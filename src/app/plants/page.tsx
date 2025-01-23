@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 
-import Layout from "../../components/Layout"
+import RootLayout from "../../app/layout"
 
 type Plant = {
   id: string;
@@ -23,7 +23,7 @@ export default function Plants() {
   });
 
   return (
-    <Layout>
+    <RootLayout>
     <main>
       <h1>Florida Native Plants</h1>
       <ul>
@@ -34,6 +34,6 @@ export default function Plants() {
         ))}
       </ul>
     </main>
-    </Layout>
+    </RootLayout>
   );
 }

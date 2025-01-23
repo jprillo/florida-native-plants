@@ -1,20 +1,20 @@
-import { ReactNode } from "react";
+"use client";
 
-export const metadata = {
-  title: "Backyard Botanical",
-  description: "Discover Florida native plants and butterflies.",
-};
+import { ReactNode, useState } from "react";
+import NavBar from '../components/Navagation'
+import '../styles/main.scss'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsActive((prev) => !prev);
+  };
+
   return (
     <html lang="en">
       <body>
-        <header>
-          <nav>
-            <a href="/">Home</a>
-            <a href="/butterflies">Butterflies</a>
-          </nav>
-        </header>
+        <NavBar toggleNavbar={toggleNavbar} isActive={isActive} />
         <main>{children}</main>
       </body>
     </html>

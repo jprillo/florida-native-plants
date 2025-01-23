@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import ButterflyTemplate from "../../../components/ButterflyTemplate";
-import Layout from "../../../components/Layout";
+import RootLayout from "../../../app/layout";
 
 type ButterflyFrontmatter = {
   commonName: string;
@@ -56,7 +56,7 @@ export default async function ButterflyPage({
 
   // Render the page
   return (
-    <Layout>
+    <RootLayout>
       <ButterflyTemplate
         commonName={frontmatter.commonName}
         latinName={frontmatter.latinName}
@@ -78,6 +78,6 @@ export default async function ButterflyPage({
         imageOne={frontmatter.imageOne}
         content={mdxSource} // Pass serialized MDX content
       />
-    </Layout>
+    </RootLayout>
   );
 }

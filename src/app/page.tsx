@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 import "../styles/HomePage.scss";
-import Layout from "../components/Layout"
+
 
 const HomePage = () => {
   return (
-    <Layout>
+
     <main className="homepage-container">
       {/* Hero Section */}
       <header className="hero">
@@ -61,7 +61,7 @@ const HomePage = () => {
         <p>&copy; {new Date().getFullYear()} Florida Native Plants and Butterflies. All rights reserved.</p>
       </footer>
     </main>
-    </Layout>
+  
   );
 };
 
