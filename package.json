@@ -18,7 +18,7 @@
     "next-seo": "^6.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.83.4"
+    "sass": "^1.32.13"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
