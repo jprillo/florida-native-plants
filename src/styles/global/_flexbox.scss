@@ -27,69 +27,94 @@
 
     .col {
       &-1 {
-          width:100%;
-      @include breakpoint(md){
-        width: div(100%, 12);
+        width: 100%;
 
-         }  }
+        @include breakpoint(md) {
+          width: 100% / 12; // Division using `/`
+        }
+      }
 
       &-2 {
-        width:100%;
-        @include breakpoint(md){
-          width: div(100%, 6);
-         }  }
+        width: 100%;
+
+        @include breakpoint(md) {
+          width: 100% / 6;
+        }
+      }
 
       &-3 {
-        width:100%;
-        @include breakpoint(md){
-          width: div(100%, 4);
-         }  }
+        width: 100%;
+
+        @include breakpoint(md) {
+          width: 100% / 4;
+        }
+      }
+
       &-4 {
-          width:100%;
-          @include breakpoint(md){
-            width: div(100%, 3);
-           }  }
-           &-5 {
-            width:100%;
-        @include breakpoint(md){
-          width: div(100%, 2.4);
-           }  }
+        width: 100%;
 
-        &-6 {
-          width:100%;
-          @include breakpoint(md){
-            width: div(100%, 2);
-           }  }
+        @include breakpoint(md) {
+          width: 100% / 3;
+        }
+      }
 
-        &-7 {
-          width:100%;
-          @include breakpoint(md){
-            width: div(100%, 1.714285714285714);
-           }  }
-        &-8 {
-            width:100%;
-            @include breakpoint(md){
-              width: div(100%, 1.5);
-             }  }
-        &-9 {
-              width:100%;
-          @include breakpoint(md){
-            width: div(100%, 1.33333333333333);
-             }  }
+      &-5 {
+        width: 100%;
 
-          &-10 {
-            width:100%;
-            @include breakpoint(md){
-              width: div(100%, 1.2);
-             }  }
+        @include breakpoint(md) {
+          width: 100% / 2.4;
+        }
+      }
 
-          &-11 {
-            width:100%;
-            @include breakpoint(md){
-              width: div(100%, 1.090909090909091);
-             }  }
-          &-12 {
-              width:100%;
-                }
-  }
+      &-6 {
+        width: 100%;
 
+        @include breakpoint(md) {
+          width: 100% / 2;
+        }
+      }
+
+      &-7 {
+        width: 100%;
+
+        @include breakpoint(md) {
+          width: 100% / 1.714285714285714;
+        }
+      }
+
+      &-8 {
+        width: 100%;
+
+        @include breakpoint(md) {
+          width: 100% / 1.5;
+        }
+      }
+
+      &-9 {
+        width: 100%;
+
+        @include breakpoint(md) {
+          width: 100% / 1.33333333333333;
+        }
+      }
+
+      &-10 {
+        width: 100%;
+
+        @include breakpoint(md) {
+          width: 100% / 1.2;
+        }
+      }
+
+      &-11 {
+        width: 100%;
+
+        @include breakpoint(md) {
+          width: 100% / 1.090909090909091;
+        }
+      }
+
+      &-12 {
+        width: 100%; // Full-width for 12 columns, no media query needed
+      }
+    }

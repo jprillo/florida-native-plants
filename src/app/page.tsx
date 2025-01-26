@@ -41,6 +41,7 @@ const HomePage = async () => {
         <p>
           Dive into the world of Florida's native plants, perfect for creating a low-maintenance, eco-friendly garden that supports local wildlife.
         </p>
+        
         <PlantsList plants={plants} />
         <Link href="/plants" className="button">
           Explore All Plants
@@ -58,10 +59,7 @@ const HomePage = async () => {
         </Link>
       </section>
 
-      {/* Footer */}
-      <footer className="footer h-pad">
-        <p>&copy; {new Date().getFullYear()} Florida Native Plants and Butterflies. All rights reserved.</p>
-      </footer>
+
     </main>
   );
 };

@@ -1,0 +1,78 @@
+.plant-container {
+    background-color: #f8f9fa; // Soft, neutral background
+    padding: 2rem; // Add spacing around the content
+    border-radius: 8px; // Rounded corners for a modern look
+    max-width: 800px; // Limit width for readability
+    margin: 2rem auto; // Center the blog on the page
+    img{ width: 100%;}
+    .title {
+      font-size: 2.5rem;
+      color: #2c3e50; // Dark, elegant color for titles
+      margin-bottom: 0.5rem;
+      text-align: center; // Center the title
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #7f8c8d; // Subtle, secondary color
+      margin-bottom: 1rem;
+      text-align: center; // Center the subtitle
+      font-style: italic; // Add a subtle stylistic touch
+    }
+
+    .description {
+      font-size: 1rem;
+      line-height: 1.8; // Improve readability
+      color: #34495e; // Slightly softer dark color
+      margin-bottom: 2rem;
+      text-align: center; // Center-align for symmetry
+      font-weight: 300; // Lighter font for balance
+    }
+
+    .additional-content {
+      font-size: 1rem;
+      line-height: 1.8; // Maintain good readability for longer text
+      color: #2c3e50; // Consistent dark color
+      border-top: 1px solid #dcdcdc; // Subtle separation line
+      padding-top: 1rem; // Add spacing after the description
+
+      h2,
+      h3 {
+        color: #27ae60; // A green color for section headings
+        margin-top: 1.5rem; // Spacing above headings
+      }
+
+      p {
+        margin: 1rem 0; // Add vertical spacing between paragraphs
+      }
+
+      a {
+        color: #2980b9; // Blue for links
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline; // Add underline on hover for links
+        }
+      }
+
+      blockquote {
+        font-style: italic;
+        background-color: #ecf0f1; // Light background for quotes
+        border-left: 4px solid #3498db; // Blue border for quotes
+        padding: 1rem;
+        margin: 1.5rem 0;
+        color: #7f8c8d; // Softer text color for quotes
+      }
+
+      ul,
+      ol {
+        margin: 1rem 0;
+        padding-left: 1.5rem; // Indentation for lists
+
+        li {
+          margin-bottom: 0.5rem;
+          color: #34495e; // Consistent text color
+        }
+      }
+    }
+  }

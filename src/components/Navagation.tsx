@@ -1,17 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Button from "./button";
 
+export default function NavBar() {
+  // Local state to track if the mobile nav is open
+  const [isActive, setIsActive] = useState(false);
 
-type NavBarProps = {
-  toggleNavbar: () => void; // Function to toggle the navbar
-  isActive: boolean; // State indicating if the navbar is active
-  color?: string; // Optional color prop
-};
+  // Toggles the mobile nav
+  const toggleNavbar = () => {
+    setIsActive(!isActive);
+  };
 
-const NavBar: React.FC<NavBarProps> = ({ toggleNavbar, isActive, color }) => {
+  // Closes the mobile nav, e.g., after a link is clicked
+  const closeNavbar = () => {
+    setIsActive(false);
+  };
+
   return (
     <section
       className={`navagation-wrap h-pad col-12 ${isActive ? "mobile-wrap" : ""}`}
@@ -22,7 +28,7 @@ const NavBar: React.FC<NavBarProps> = ({ toggleNavbar, isActive, color }) => {
           <Link href="/" passHref>
             <p
               style={{
-                color: color || "lightgreen", // Use `color` prop if provided
+                color: "lightgreen",
                 fontWeight: "900",
                 fontSize: "25px",
               }}
@@ -37,22 +43,22 @@ const NavBar: React.FC<NavBarProps> = ({ toggleNavbar, isActive, color }) => {
           <div className={`responsive-nav ${isActive ? "mobile-nav" : ""}`}>
             <ul className="nav">
               <li className="set">
-                <Link href="/" passHref>
-      Home
+                <Link href="/" onClick={closeNavbar}>
+                  Home
                 </Link>
               </li>
               <li className="set">
-                <Link href="/plants/" passHref>
-                 plants
+                <Link href="/plants/" onClick={closeNavbar}>
+                  Plants
                 </Link>
               </li>
               <li className="set">
-                <Link href="/butterflies/" passHref>
-                 Butterfliues
+                <Link href="/butterflies/" onClick={closeNavbar}>
+                  Butterflies
                 </Link>
               </li>
               <li className="set">
-                <Link href="/blog/" passHref>
+                <Link href="/blog/" onClick={closeNavbar}>
                   Blog
                 </Link>
               </li>
@@ -62,6 +68,7 @@ const NavBar: React.FC<NavBarProps> = ({ toggleNavbar, isActive, color }) => {
                   cta="Contact"
                   link="/contact/"
                   icon=""
+                  
                 />
               </li>
             </ul>
@@ -84,7 +91,4 @@ const NavBar: React.FC<NavBarProps> = ({ toggleNavbar, isActive, color }) => {
       </div>
     </section>
   );
-};
-
-export default NavBar;
-
+}

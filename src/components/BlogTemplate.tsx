@@ -2,7 +2,7 @@
 
 import React from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import "../styles/PlantTemplate.scss";
+import "../styles/BlogTemplate.scss";
 
 type BlogTemplateProps = {
   frontmatter: {

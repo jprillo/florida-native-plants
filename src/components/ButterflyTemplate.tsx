@@ -47,9 +47,9 @@ const ButterflyTemplate: React.FC<ButterflyTemplateProps> = ({
   content,
 }) => {
   return (
-    <div className="butterfly-container">
-      <div className="flex gap-1 pad-top h-pad b-pad">
-        <div className="col-7">
+    <div className=" col-9">
+      <div className="flex gap-1 pad-top h-pad ">
+        <div className="col-6">
           <div className="butterfly-name">
             <h1>{commonName}</h1>
             <h2 className="sci-name" style={{ backgroundColor: color }}>
@@ -57,7 +57,7 @@ const ButterflyTemplate: React.FC<ButterflyTemplateProps> = ({
             </h2>
           </div>
           <img className="h-image" src={imageOne} alt={commonName} />
-          <p>{description}</p>
+          <p style={{maxWidth: "800px"}}>{description}</p>
         </div>
         <div className="col-5 stats">
           <p>
@@ -72,20 +72,22 @@ const ButterflyTemplate: React.FC<ButterflyTemplateProps> = ({
           <p>
             <span className="bold">Host Plant:</span> {host}
           </p>
-          <p>
+
+        </div>
+      </div>
+      <div className="flex gap-1 pad-top b-pad h-pad">
+        <div className="col-9">
+        <p>
             <span className="bold">Distribution:</span> {distribution}
           </p>
           <p>
             <span className="bold">Where to Find:</span> {whereToFind}
           </p>
+          <h3>Additional Information</h3>
+
           <p>
             <span className="bold">Conservation Status:</span> {conservationStatus}
           </p>
-        </div>
-      </div>
-      <div className="flex gap-1 pad-top b-pad h-pad">
-        <div className="col-9">
-          <h3>Additional Information</h3>
           {/* Render the MDX content */}
           <MDXRemote {...content} />
         </div>
