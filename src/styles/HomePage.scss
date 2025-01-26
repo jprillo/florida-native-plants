@@ -10,7 +10,6 @@
       position: relative;
       width: 100vw;
       margin-left: calc(-50vw + 50%);
-      height: 60vh;
       background-image: url("/img/hero-image.jpg");
       background-size: cover;
       background-position: center;
@@ -20,12 +19,14 @@
       color: #fff;
       text-align: center;
 
+
       .hero-content {
-        background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay for text readability */
-        padding: 20px 40px;
+        background: rgba(18, 1, 42, 0.8); /* Semi-transparent overlay for text readability */
+        padding: 2% 8%;
         border-radius: 10px;
+        text-align: center;
       }
-h1, p{ color: white;}
+h1, p{ color: white; text-align: center;}
 
     }
 
@@ -33,7 +34,10 @@ h1, p{ color: white;}
     .section {
       margin: 40px 0;
       text-align: center;
-      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
 
 
 

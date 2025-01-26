@@ -49,7 +49,7 @@ const PlantTemplate: React.FC<PlantTemplateProps> = ({ frontmatter, mdxSource })
   } = frontmatter;
 
   return (
-    <div className="plant-container">
+    <div className="plant-container h-pad">
       {/* Title Section */}
       <h1 className="title" style={{ color }}>{commonName}</h1>
       <h2 className="subtitle">{scientificName}</h2>

@@ -56,7 +56,7 @@ export async function generateStaticParams() {
 // Render the plant page dynamically based on the `id` parameter
 export default async function PlantPage({ params }: PlantPageProps) {
   try {
-    const filePath = path.join("content/plants", `${params.id}.mdx`);
+    const filePath = await path.join("content/plants", `${ params.id}.mdx`);
 
     // Check if the `.mdx` file exists
     if (!fs.existsSync(filePath)) {

@@ -9,6 +9,13 @@ type NavBarProps = {
 };
 
 const NavBar: React.FC<NavBarProps> = ({ toggleNavbar, isActive, color }) => {
+  // Function to handle link clicks and close the menu
+  const handleLinkClick = () => {
+    if (isActive) {
+      toggleNavbar(); // Close the menu
+    }
+  };
+
   return (
     <section
       className={`navagation-wrap h-pad col-12 ${isActive ? "mobile-wrap" : ""}`}
@@ -35,22 +42,30 @@ const NavBar: React.FC<NavBarProps> = ({ toggleNavbar, isActive, color }) => {
             <ul className="nav">
               <li className="set">
                 <Link href="/" passHref>
-                  <a className="active">Home</a>
+                  <a className="active" onClick={handleLinkClick}>
+                    Home
+                  </a>
                 </Link>
               </li>
               <li className="set">
-                <Link href="/native-plants/" passHref>
-                  <a className="active">Native Plants</a>
+                <Link href="/plants/" passHref>
+                  <a className="active" onClick={handleLinkClick}>
+                    Plants
+                  </a>
                 </Link>
               </li>
               <li className="set">
                 <Link href="/butterflies/" passHref>
-                  <a className="active">Butterflies</a>
+                  <a className="active" onClick={handleLinkClick}>
+                    Butterflies
+                  </a>
                 </Link>
               </li>
               <li className="set">
                 <Link href="/blog/" passHref>
-                  <a className="active">Blog</a>
+                  <a className="active" onClick={handleLinkClick}>
+                    Blog
+                  </a>
                 </Link>
               </li>
               <li className="set" style={{ marginTop: "25px" }}>

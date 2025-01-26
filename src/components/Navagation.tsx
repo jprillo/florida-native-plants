@@ -42,8 +42,8 @@ const NavBar: React.FC<NavBarProps> = ({ toggleNavbar, isActive, color }) => {
                 </Link>
               </li>
               <li className="set">
-                <Link href="/native-plants/" passHref>
-                 Native
+                <Link href="/plants/" passHref>
+                 plants
                 </Link>
               </li>
               <li className="set">

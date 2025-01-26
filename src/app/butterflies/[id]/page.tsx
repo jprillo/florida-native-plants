@@ -40,7 +40,7 @@ export default async function ButterflyPage({
 }) {
   try {
     // Access the parameter dynamically
-    const { id } = params;
+    const { id } = await params;
 
     // Resolve the file path dynamically
     const filePath = path.join(process.cwd(), "content/butterflies", `${id}.mdx`);
