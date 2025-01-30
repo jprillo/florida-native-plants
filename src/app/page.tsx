@@ -41,11 +41,14 @@ const HomePage = async () => {
         <p>
           Dive into the world of Florida's native plants, perfect for creating a low-maintenance, eco-friendly garden that supports local wildlife.
         </p>
-        
+
         <PlantsList plants={plants} />
-        <Link href="/plants" className="button">
+<div style={{ display: "flex",
+      alignItems: "center", justifyContent: "center", }}>
+        <Link href="/plants" className="button primary " style={{maxWidth: "200px", marginTop: "30px"}}>
           Explore All Plants
         </Link>
+</div>
       </section>
 
       {/* Additional Resources */}

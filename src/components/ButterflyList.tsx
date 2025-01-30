@@ -8,7 +8,7 @@ type ButterflyListProps = {
 
 export default function ButterflyList({ butterflies }: ButterflyListProps) {
   return (
-    <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+    <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center" }}>
       {butterflies.map((butterfly) => (
         <li key={butterfly.id} style={{ listStyle: "none" }}>
           <Link

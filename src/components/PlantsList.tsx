@@ -18,12 +18,12 @@ type PlantsListProps = {
   count?: number; // Optional prop to specify how many random plants to show
 };
 
-export default function PlantsList({ plants, count = 5 }: PlantsListProps) {
+export default function PlantsList({ plants, count = 4 }: PlantsListProps) {
   // Shuffle the plants array and take the first `count` plants
   const shuffledPlants = [...plants].sort(() => Math.random() - 0.5).slice(0, count);
 
   return (
-    <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+    <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px",  justifyContent: "center" }}>
       {shuffledPlants.map((plant) => (
         <li
           key={plant.id}
