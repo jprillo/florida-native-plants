@@ -21,7 +21,7 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ frontmatter, mdxSource }) =
   } = frontmatter;
 
   return (
-    <div className="plant-container">
+    <div className="plant-container h-pad">
       {/* Title Section */}
       <h1 className="title" >{title}</h1>
       <h2 className="subtitle">{author}</h2>

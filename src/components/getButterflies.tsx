@@ -7,6 +7,7 @@ export type Butterfly = {
   commonName: string;
   color: string;
   latinName: string;
+  imageOne: string;
 };
 
 export async function getButterflies(): Promise<Butterfly[]> {
@@ -24,6 +25,7 @@ export async function getButterflies(): Promise<Butterfly[]> {
         commonName: data.commonName,
         color: data.color,
         latinName: data.latinName,
+        imageOne: data.imageOne,
       };
     })
   );

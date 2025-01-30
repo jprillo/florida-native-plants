@@ -23,12 +23,12 @@
         padding-right: 4vw;
     }
     @include breakpoint(lg){
-        padding-left: 7vw;
-        padding-right: 7vw;
+        padding-left: 12vw;
+        padding-right: 12vw;
      }
      @include breakpoint(xlg){
-        padding-left: 9vw;
-        padding-right: 9vw;
+        padding-left: 15vw;
+        padding-right: 15vw;
      }
 
 
@@ -304,9 +304,7 @@ p{
     object-fit: cover;
 
 }
-h2{
-    padding: 5vh 0;
-}
+
 h3{
     font-size: 30px;
     padding: 0 0 0 0;
@@ -632,42 +630,21 @@ input:focus, textarea:focus, select:focus{
 .butterfly-name{
     h1{
 
-            font-size: 35px;
+            font-size: 40px;
             @include breakpoint(xs){
                 font-size: 30px;
             }
         @include breakpoint(md){
-            font-size: 45px;
+            font-size: 55px;
         }
         @include breakpoint(lg){
             font-size: 55px;
         }
         @include breakpoint(xlg){
-            font-size: 60px;
+            font-size: 55px;
         }
     }
-    h2{
 
-        font-size: 20px;
-        margin-top: -70px;
-        @include breakpoint(xs){
-            font-size: 18px;
-            margin-top: -80px;
-        }
-    @include breakpoint(md){
-        font-size: 25px;
-        margin-top: -60px;
-    }
-    @include breakpoint(lg){
-        font-size: 30px;
-        margin-top: -50px;
-
-    }
-    @include breakpoint(xlg){
-        font-size: 30px;
-        margin-top: -45px;
-    }
-}
 }
   .sci-name{
     color: white;
@@ -725,9 +702,7 @@ gap:20px;
     flex-direction: column;
   gap: 1.5rem;
 
-  @include breakpoint(md){
-    padding-top: 100px;
-}
+
     span{
             padding-right: 2rem;
     }

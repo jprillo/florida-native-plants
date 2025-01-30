@@ -8,6 +8,7 @@ type Butterfly = {
   commonName: string;
   color: string;
   latinName: string;
+  imageOne: string;
 };
 
 export default async function Butterflies() {
@@ -29,6 +30,7 @@ export default async function Butterflies() {
           commonName: data.commonName,
           color: data.color,
           latinName: data.latinName,
+          imageOne: data.imageOne,
         };
       })
     );
@@ -44,8 +46,10 @@ export default async function Butterflies() {
                 style={{
                   color: butterfly.color,
                   borderColor: butterfly.color,
-                  backgroundImage: `linear-gradient(179.83deg, rgba(0, 0, 0, 0) -2.09%, rgba(0, 0, 0, 0.8) 106.17%)`,
+                  backgroundImage: `url(${butterfly.imageOne})`,
                   borderRadius: "25px",
+                  backgroundPosition: "center",
+              backgroundSize: "cover",
                   height: "265px",
                   width: "200px",
                   display: "flex",

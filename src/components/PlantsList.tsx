@@ -28,8 +28,9 @@ export default function PlantsList({ plants, count = 5 }: PlantsListProps) {
         <li
           key={plant.id}
           style={{
-            listStyle: "none",borderColor: plant.color,
-
+            listStyle: "none",
+            borderColor: plant.color,
+            backgroundImage: `url('${plant.imageOne}')`,
             borderWidth: "2px",
             borderRadius: "8px",
             overflow: "hidden",
@@ -50,7 +51,7 @@ export default function PlantsList({ plants, count = 5 }: PlantsListProps) {
                  color: "inherit",
                  display: "block",
                  height: "100%",
-                 backgroundImage: `url(${plant.imageOne})`,
+
              }}>
               <h3 style={{ margin: "0", fontSize: "1.2rem", color: plant.color }}>
                 {plant.commonName}

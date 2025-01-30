@@ -16,7 +16,11 @@ export default function ButterflyList({ butterflies }: ButterflyListProps) {
             style={{
               color: butterfly.color,
               borderColor: butterfly.color,
-              backgroundImage: `linear-gradient(179.83deg, rgba(0, 0, 0, 0) -2.09%, rgba(0, 0, 0, 0.8) 106.17%)`,
+              backgroundImage: `url('${butterfly.imageOne}')`,
+
+              backgroundSize: "cover",
+backgroundPosition: "center",
+
               borderRadius: "25px",
               height: "265px",
               width: "200px",

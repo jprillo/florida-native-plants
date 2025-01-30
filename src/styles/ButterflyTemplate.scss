@@ -2,37 +2,26 @@
 .butterfly-container {
     overflow-x: hidden;
     padding: 1rem;
+h1{padding: 0; margin: 0;}
+p{max-width: 700px;}
+
   }
-
-  /* Layout Styles */
-  .flex {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .pad-top {
-    padding-top: 1rem;
-  }
-
-  .b-pad {
-    padding-bottom: 1rem;
-  }
-
-  .h-pad {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-
+h3, h4{ padding: 2.5rem 0 .5rem
+}
 
   /* Header Styles */
   .butterfly-name h1 {
-    padding-bottom: 1rem;
+    padding-bottom: .25rem;
   }
+  .butterfly-name h2 {
+    padding-bottom: .25rem;
+    font-weight: 700;
+    font-style: italic;
 
+  }
   .sci-name {
     color: white;
-    font-weight: bold;
+
     text-align: center;
     padding: 0.5rem;
     border-radius: 8px;
@@ -50,7 +39,7 @@
 
   /* Box Styles */
   .stats {
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   .bold {
@@ -64,10 +53,7 @@
     border-radius: 25px;
     color: white;
 
-    h3 {
-      font-style: italic;
-      font-weight: bold;
-    }
+  
   }
 
   .ad-box {

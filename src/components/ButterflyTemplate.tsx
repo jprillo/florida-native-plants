@@ -47,46 +47,81 @@ const ButterflyTemplate: React.FC<ButterflyTemplateProps> = ({
   content,
 }) => {
   return (
-    <div className=" col-9">
-      <div className="flex gap-1 pad-top h-pad ">
-        <div className="col-6">
-          <div className="butterfly-name">
+    <div  className="pad-top h-pad " >
+       <div className="butterfly-name">
             <h1>{commonName}</h1>
-            <h2 className="sci-name" style={{ backgroundColor: color }}>
+            <h2  style={{ color: color }}>
               {latinName}
             </h2>
+
           </div>
-          <img className="h-image" src={imageOne} alt={commonName} />
+      <div className="flex gap-1 " style={{alignContent: "center"}}>
+        <div className="col-6">
+
+          <img width="100%" className="h-image" src={imageOne} alt={commonName} />
           <p style={{maxWidth: "800px"}}>{description}</p>
         </div>
         <div className="col-5 stats">
+          <div>
           <p>
-            <span className="bold">Family:</span> {family}
+            <span style={{color: color }}  className="bold">Family:</span>
           </p>
           <p>
-            <span className="bold">Other Common Names:</span> {otherNames}
+           {family}
           </p>
-          <p>
-            <span className="bold">Size:</span> {size}
-          </p>
-          <p>
-            <span className="bold">Host Plant:</span> {host}
-          </p>
+          </div>
 
+          <div>
+          <p>
+            <span style={{color: color }}  className="bold">Other Common Names:</span>
+          </p>
+          <p>
+             {otherNames}
+          </p>
+          </div>
+
+          <div>
+          <p>
+            <span style={{color: color }}  className="bold">Size:</span>
+          </p>
+          <p>
+           {size}
+          </p>
+          </div>
+
+          <div>
+          <p>
+            <span style={{color: color }} className="bold">Host Plant:</span>
+          </p>
+          <p>
+            {host}
+          </p>
+          </div>
         </div>
       </div>
-      <div className="flex gap-1 pad-top b-pad h-pad">
-        <div className="col-9">
-        <p>
-            <span className="bold">Distribution:</span> {distribution}
-          </p>
-          <p>
-            <span className="bold">Where to Find:</span> {whereToFind}
-          </p>
-          <h3>Additional Information</h3>
 
-          <p>
-            <span className="bold">Conservation Status:</span> {conservationStatus}
+      <div className="flex gap-1  ">
+        <div className="col-6">
+        <h3>
+           Distribution:
+          </h3>
+          <p >{distribution}</p>
+        </div>
+        <div>
+
+        </div>
+    </div>
+      <div className="flex gap-1">
+
+        <div className="col-9">
+        <h3 className="bold">Where to Find:</h3>
+          <p style={{maxWidth: "700px"}}>
+             {whereToFind}
+          </p>
+
+          <h3 className="bold">Conservation Status:</h3>
+          <p style={{maxWidth: "700px"}}>
+           {conservationStatus}
           </p>
           {/* Render the MDX content */}
           <MDXRemote {...content} />
@@ -110,3 +145,4 @@ const ButterflyTemplate: React.FC<ButterflyTemplateProps> = ({
 };
 
 export default ButterflyTemplate;
+

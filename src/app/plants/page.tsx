@@ -31,7 +31,7 @@ async function getPlants(): Promise<Plant[]> {
         description: data.description,
         color: data.color,
         hostTo: data.hostTo,
-        imageOne: data.imageOne.publicURL,
+        imageOne: data.imageOne,
       };
     })
   );

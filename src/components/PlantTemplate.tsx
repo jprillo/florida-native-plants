@@ -49,13 +49,16 @@ const PlantTemplate: React.FC<PlantTemplateProps> = ({ frontmatter, mdxSource })
   } = frontmatter;
 
   return (
-    <div className="plant-container h-pad">
+    <div className="h-pad">
+    <div className="flex gap-1 pad-top b-pad ">
+<div className="col-6">
       {/* Title Section */}
+      <img src={imageOne} alt={commonName} className="image" />
       <h1 className="title" style={{ color }}>{commonName}</h1>
       <h2 className="subtitle">{scientificName}</h2>
       <p className="description">{description}</p>
-      <img src={imageOne} alt={commonName} className="image" />
-
+      </div>
+      <div className="col-6">
       {/* Details Section */}
       <div className="details">
         <p className="detail">
@@ -77,6 +80,9 @@ const PlantTemplate: React.FC<PlantTemplateProps> = ({ frontmatter, mdxSource })
           <span className="label">Toxicity:</span> {toxic}
         </p>
       </div>
+
+</div>
+</div>
 
       {/* Needs Section */}
       <div className="needs-section">
@@ -106,7 +112,7 @@ const PlantTemplate: React.FC<PlantTemplateProps> = ({ frontmatter, mdxSource })
       <div className="additional-content">
         <MDXRemote {...mdxSource} />
       </div>
-    </div>
+      </div>
   );
 };
 

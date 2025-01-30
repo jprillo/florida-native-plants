@@ -8,6 +8,7 @@ type Blog = {
   title: string
   description: string;
   author: string;
+  featuredimage: string;
 
 };
 
@@ -27,6 +28,7 @@ async function getBlog(): Promise<Blog[]> {
         author: data.author,
         title: data.title,
         description: data.description,
+        featuredimage: data.featuredimage
 
       };
     })
@@ -37,7 +39,7 @@ export default async function BlogPage() {
   const blog = await getBlog();
 
   return (
-    <main className="h-pad bg-color pad-top">
+    <main className="h-pad bg-color pad-top h-pad">
       <h1 style={{ textAlign: "center", color: "#D3F9C9" }}>Blog</h1>
       {/* Pass data to the client-side component */}
       <BlogList blog={blog} />

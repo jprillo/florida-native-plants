@@ -1,7 +1,7 @@
 .plant-container {
 
 
-   
+
     font-family: Arial, sans-serif;
     line-height: 1.6;
 
@@ -12,10 +12,7 @@
       color: #333;
       text-align: center;
 
-      /* Adjust for smaller screens */
-      @media (max-width: 768px) {
-        font-size: 2.2rem;
-      }
+
     }
 
     .subtitle {
@@ -64,10 +61,7 @@
         }
       }
 
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        padding: 15px;
-      }
+
     }
 
     /* Needs Section */
@@ -98,10 +92,7 @@
         }
       }
 
-      @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 15px;
-      }
+
     }
 
     /* Ad Section */
@@ -132,9 +123,7 @@
 
     /* Additional Content */
     .additional-content {
-      margin-top: 30px;
-      font-size: 1.2rem;
-      line-height: 1.8;
+
       color: #444;
 
       @media (max-width: 768px) {

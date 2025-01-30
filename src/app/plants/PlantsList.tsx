@@ -72,17 +72,17 @@ export default function PlantsList({ plants }: PlantsListProps) {
             style={{
               borderColor: plant.color,
               position: "relative",
-              backgroundImage: `linear-gradient(179.83deg, rgba(0, 0, 0, 0) -2.09%, rgba(0, 0, 0, 0.8) 106.17%), url('${plant.imageOne}')`,
+              backgroundImage: `url('${plant.imageOne}')`,
               borderRadius: "25px",
               height: "265px",
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
           >
-            <div>
+
               <h3>{plant.commonName}</h3>
               <p>{plant.scientificName}</p>
-            </div>
+
           </Link>
         ))}
       </div>
