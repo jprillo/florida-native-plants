@@ -720,6 +720,48 @@ gap:20px;
     font-weight: bold;
     color: Green;
 }
+.blog-box{
+    width: 100%;
+    margin: 20px 0;
+padding: 15px;
+    text-align: center;
+    border: 5px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+
+h3{
+font-size: 30px;
+color: white;
+font-weight: 200;
+}
+p{
+    font-size: 20px;
+    color: white;
+}
+    &:hover {
+        background-color: rgb(238, 231, 243);
+padding: 5px;
+border-width: 10px;
+
+
+
+      }
+    @include breakpoint(sm){
+        width: 100%;
+
+        }
+        @include breakpoint(md){
+            width: 48%;
+
+            }
+        @include breakpoint(lg){
+            width: 48%;
+
+            }
+
+}
 .flower-container{
     width: 100%;
     margin: 20px 0;

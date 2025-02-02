@@ -25,43 +25,26 @@ export default function PlantsList({ plants, count = 4 }: PlantsListProps) {
   return (
     <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px",  justifyContent: "center" }}>
       {shuffledPlants.map((plant) => (
-        <li
-          key={plant.id}
-          style={{
-            listStyle: "none",
-            borderColor: plant.color,
-            backgroundImage: `url('${plant.imageOne}')`,
-            borderWidth: "2px",
-            borderRadius: "8px",
-            overflow: "hidden",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    <Link
+    key={plant.id}
+    className="flower-container"
+    href={`/plants/${plant.id}`}
+    aria-label={`Learn more about ${plant.commonName}`}
+    style={{
+      borderColor: plant.color,
+      position: "relative",
+      backgroundImage: `url('${plant.imageOne}')`,
+      borderRadius: "25px",
+      height: "265px",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+    }}
+  >
 
-          }}
-        >
-          <Link
-            href={`/plants/${plant.id}`}
-            style={{
-              textDecoration: "none",
+      <h3>{plant.commonName}</h3>
+      <p>{plant.scientificName}</p>
 
-
-            }}
-          >
-
-            <div style={{ padding: "10px",
-                 color: "inherit",
-                 display: "block",
-                 height: "100%",
-
-             }}>
-              <h3 style={{ margin: "0", fontSize: "1.2rem", color: plant.color }}>
-                {plant.commonName}
-              </h3>
-              <p style={{ margin: "0.5rem 0", fontSize: "1rem", color: "#555" }}>
-                {plant.scientificName}
-              </p>
-            </div>
-          </Link>
-        </li>
+  </Link>
       ))}
     </ul>
   );

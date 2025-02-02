@@ -8,22 +8,28 @@ type ButterflyListProps = {
 
 export default function ButterflyList({ butterflies }: ButterflyListProps) {
   return (
-    <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center" }}>
+    <ul    style={{
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      paddingTop: "20px",
+      paddingBottom: "50px",
+      gap: "20px",
+    }}>
       {butterflies.map((butterfly) => (
-        <li key={butterfly.id} style={{ listStyle: "none" }}>
+
           <Link
+          key={butterfly.id}
             className="flower-container"
             style={{
               color: butterfly.color,
               borderColor: butterfly.color,
-              backgroundImage: `url('${butterfly.imageOne}')`,
-
-              backgroundSize: "cover",
-backgroundPosition: "center",
-
+              backgroundImage: `url(${butterfly.imageOne})`,
               borderRadius: "25px",
+              backgroundPosition: "center",
+          backgroundSize: "cover",
               height: "265px",
-              width: "200px",
+
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-end",
@@ -34,15 +40,13 @@ backgroundPosition: "center",
             href={`/butterflies/${butterfly.id}`}
           >
             <div>
-              <h3 style={{ margin: "0", fontSize: "1.2rem" }}>
-                {butterfly.commonName}
-              </h3>
-              <p style={{ margin: "0.5rem 0 0", fontSize: "1rem" }}>
+              <h3>{butterfly.commonName}</h3>
+              <p>
                 {butterfly.latinName}
               </p>
             </div>
           </Link>
-        </li>
+
       ))}
     </ul>
   );

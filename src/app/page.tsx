@@ -5,12 +5,14 @@ import { getButterflies } from "../components/getButterflies"; // Import the reu
 import { getPlants } from "../components/getPlants"; // Import the reusable function for plants
 import ButterflyList from "../components/ButterflyList"; // Import the reusable butterfly component
 import PlantsList from "../components/PlantsList"; // Import the reusable plants component
+import BlogList from "../components/BlogList"; // Import the reusable butterfly component
+import { getBlog } from "../components/getBlog"; // Import the reusable plants component
 
 const HomePage = async () => {
   // Fetch butterfly and plant data
   const butterflies = await getButterflies();
   const plants = await getPlants();
-
+  const blog = await getBlog();
   return (
     <main className="homepage-container">
       {/* Hero Section */}
@@ -30,6 +32,7 @@ const HomePage = async () => {
           Learn about the vibrant butterflies that call Florida home. Explore their life cycles, habitats, and how to attract them to your garden.
         </p>
         <ButterflyList butterflies={butterflies} />
+
         <Link href="/butterflies" className="button">
           Explore All Butterflies
         </Link>
@@ -52,11 +55,15 @@ const HomePage = async () => {
       </section>
 
       {/* Additional Resources */}
-      <section className="section">
+      <section className="section h-pad">
         <h2>Resources for Gardeners</h2>
         <p>
           Get tips and guides to create a thriving garden, from planting to pest control, and everything in between.
         </p>
+        <div style={{ display: "flex",
+      alignItems: "center", justifyContent: "center", }}>
+        <BlogList blogs={blog} />
+        </div>
         <Link href="/resources" className="button primary">
           Browse Resources
         </Link>

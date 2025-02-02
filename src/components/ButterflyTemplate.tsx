@@ -2,7 +2,7 @@
 
 import React from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-
+import TableOfContents from "../components/TableOfContents";
 type ButterflyTemplateProps = {
   commonName: string;
   latinName: string;
@@ -48,20 +48,21 @@ const ButterflyTemplate: React.FC<ButterflyTemplateProps> = ({
 }) => {
   return (
     <div  className="pad-top h-pad " >
-       <div className="butterfly-name">
+
+      <div className="flex gap-1 " style={{alignContent: "center"}}>
+        <div className="col-8">
+        <div className="butterfly-name">
             <h1>{commonName}</h1>
             <h2  style={{ color: color }}>
               {latinName}
             </h2>
 
           </div>
-      <div className="flex gap-1 " style={{alignContent: "center"}}>
-        <div className="col-6">
-
           <img width="100%" className="h-image" src={imageOne} alt={commonName} />
           <p style={{maxWidth: "800px"}}>{description}</p>
         </div>
-        <div className="col-5 stats">
+        <div className="col-4 stats">
+          <TableOfContents/>
           <div>
           <p>
             <span style={{color: color }}  className="bold">Family:</span>

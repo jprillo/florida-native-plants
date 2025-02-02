@@ -36,12 +36,20 @@ export default async function Butterflies() {
     );
 
     return (
-      <main>
-        <h1>Florida Butterflies</h1>
-        <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+      <main className="h-pad bg-color pad-top">
+         <h1 style={{ textAlign: "center", color: "#D3F9C9" }}>Florida Butterflies</h1>
+        <ul    style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          paddingTop: "20px",
+          paddingBottom: "50px",
+          gap: "20px",
+        }}>
           {butterflies.map((butterfly) => (
-            <li key={butterfly.id} style={{ listStyle: "none" }}>
+
               <Link
+              key={butterfly.id}
                 className="flower-container"
                 style={{
                   color: butterfly.color,
@@ -51,7 +59,7 @@ export default async function Butterflies() {
                   backgroundPosition: "center",
               backgroundSize: "cover",
                   height: "265px",
-                  width: "200px",
+
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-end",
@@ -62,15 +70,13 @@ export default async function Butterflies() {
                 href={`/butterflies/${butterfly.id}`}
               >
                 <div>
-                  <h3 style={{ margin: "0", fontSize: "1.2rem" }}>
-                    {butterfly.commonName}
-                  </h3>
-                  <p style={{ margin: "0.5rem 0 0", fontSize: "1rem" }}>
+                  <h3>{butterfly.commonName}</h3>
+                  <p>
                     {butterfly.latinName}
                   </p>
                 </div>
               </Link>
-            </li>
+
           ))}
         </ul>
       </main>
