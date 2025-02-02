@@ -762,6 +762,26 @@ border-width: 10px;
             }
 
 }
+.featured-image {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 25px;
+    display: block;
+    width:100%;
+    @include breakpoint(sm){
+      width: 100%;
+
+      }
+      @include breakpoint(md){
+          width: 48%;
+
+          }
+      @include breakpoint(lg){
+          width: 68%;
+
+          }
+
+  }
 .flower-container{
     width: 100%;
     margin: 20px 0;

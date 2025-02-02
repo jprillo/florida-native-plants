@@ -9,6 +9,8 @@ type BlogTemplateProps = {
     title: string;
     author: string;
     description: string;
+    color1: string;
+    featuredImage: string;
   };
   mdxSource: MDXRemoteSerializeResult;
 };
@@ -18,6 +20,8 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ frontmatter, mdxSource }) =
     title,
     author,
     description,
+    color1,
+    featuredImage,
   } = frontmatter;
 
   return (
@@ -26,6 +30,8 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ frontmatter, mdxSource }) =
       <h1 className="title" >{title}</h1>
       <h2 className="subtitle">{author}</h2>
       <p className="description">{description}</p>
+      <img  style={{textAlign: "center"}} className="featured-image" src={featuredImage} alt={title} />
+
 
 
 

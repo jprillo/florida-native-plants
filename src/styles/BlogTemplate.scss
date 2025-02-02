@@ -13,7 +13,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
 .blog-container {
   display: flex;
   flex-wrap: wrap;
- 
+
   gap: 20px;
   padding-top: 20px;
   padding-bottom: 50px;
@@ -43,7 +43,9 @@ $shadow-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 6px $shadow-color;
   }
 }
-
+.additional-content{
+li{color: grey;}
+}
 // ------------------------------
 // Content Overlay
 // ------------------------------
@@ -60,12 +62,12 @@ $shadow-color: rgba(0, 0, 0, 0.1);
     color: $color-heading;
   }
 
-  p {
+  p  {
     margin: 0.5rem 0 0;
     font-size: 1rem;
     color: $color-text;
   }
-
+li{color: black;}
   small {
     display: block;
     margin-top: 0.5rem;
@@ -76,9 +78,4 @@ $shadow-color: rgba(0, 0, 0, 0.1);
 // ------------------------------
 // Featured Image (if used)
 // ------------------------------
-.featured-image {
-  max-width: 100%;
-  margin-top: 10px;
-  border-radius: 5px;
-  display: block;
-}
+

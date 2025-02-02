@@ -9,6 +9,8 @@ type BlogFrontmatter = {
   title: string;
   author: string;
   description: string;
+  color1: string;
+  featuredImage: string;
 
 };
 
