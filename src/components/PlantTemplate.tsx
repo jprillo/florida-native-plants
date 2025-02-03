@@ -3,6 +3,7 @@
 import React from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import "../styles/PlantTemplate.scss";
+import TableOfContents from "../components/TableOfContents";
 
 type PlantTemplateProps = {
   frontmatter: {
@@ -49,69 +50,105 @@ const PlantTemplate: React.FC<PlantTemplateProps> = ({ frontmatter, mdxSource })
   } = frontmatter;
 
   return (
-    <div className="h-pad">
-    <div className="flex gap-1 pad-top b-pad ">
-<div className="col-6">
+    <div className="h-pad pad-top">
+    <div className="flex gap-1 " style={{alignContent: "center"}}>
+<div className="col-8">
       {/* Title Section */}
-      <img src={imageOne} alt={commonName} className="image" />
-      <h1 className="title" style={{ color }}>{commonName}</h1>
-      <h2 className="subtitle">{scientificName}</h2>
+<div className="butterfly-name">
+      <h1 >{commonName}</h1>
+      <h2 style={{color: color}}>{scientificName}</h2>
+      </div>
+      <img width="100%" className="h-image" src={imageOne} alt={commonName} />
       <p className="description">{description}</p>
+
+      <div>
+          <p>
+            <span style={{color: color }}  className="bold">Toxicity:</span>
+          </p>
+          <p>
+           {toxic}
+          </p>
+          </div>
       </div>
-      <div className="col-6">
+
+      <div className="col-4 stats">
+      <TableOfContents/>
       {/* Details Section */}
-      <div className="details">
-        <p className="detail">
-          <span className="label">Family:</span> {family}
-        </p>
-        <p className="detail">
-          <span className="label">Size:</span> {size}
-        </p>
-        <p className="detail">
-          <span className="label">Host To:</span> {hostTo}
-        </p>
-        <p className="detail">
-          <span className="label">Zones:</span> {zones}
-        </p>
-        <p className="detail">
-          <span className="label">Lifespan:</span> {lifespan}
-        </p>
-        <p className="detail">
-          <span className="label">Toxicity:</span> {toxic}
-        </p>
-      </div>
+
+      <div>
+          <p>
+            <span style={{color: color }}  className="bold">Family:</span>
+          </p>
+          <p>
+           {family}
+          </p>
+          </div>
+          <div>
+          <p>
+            <span style={{color: color }}  className="bold">Size:</span>
+          </p>
+          <p>
+           {size}
+          </p>
+          </div>
+          <div>
+          <p>
+            <span style={{color: color }}  className="bold">Host to:</span>
+          </p>
+          <p>
+           {hostTo}
+          </p>
+          </div>
+          <div>
+          <p>
+            <span style={{color: color }}  className="bold">Zones:</span>
+          </p>
+          <p>
+           {zones}
+          </p>
+          </div>
+          <div>
+          <p>
+            <span style={{color: color }}  className="bold">Lifespan:</span>
+          </p>
+          <p>
+           {lifespan}
+          </p>
+          </div>
+
+
 
 </div>
 </div>
 
       {/* Needs Section */}
       <div className="needs-section">
-        <div className="need">
+        <div className="need col-4 ">
           <h3 className="need-title">Water Needs</h3>
           <p className="need-description">{waterNeeds}</p>
         </div>
-        <div className="need">
+        <div className="need col-4">
           <h3 className="need-title">Sun Needs</h3>
           <p className="need-description">{sunNeeds}</p>
         </div>
-        <div className="need">
+        <div className="need col-4">
           <h3 className="need-title">Fertilizer Needs</h3>
           <p className="need-description">{fertilizerNeeds}</p>
         </div>
-        <div className="need">
+        <div className="need col-6">
           <h3 className="need-title">Soil Needs</h3>
           <p className="need-description">{soilNeeds}</p>
         </div>
-        <div className="need">
+        <div className="need col-6">
           <h3 className="need-title">Propagation</h3>
           <p className="need-description">{propagation}</p>
         </div>
       </div>
 
       {/* Additional MDX Content */}
-      <div className="additional-content">
+
         <MDXRemote {...mdxSource} />
-      </div>
+
       </div>
   );
 };

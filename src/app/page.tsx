@@ -41,6 +41,7 @@ const HomePage = async () => {
       {/* Section for Plants */}
       <section className="section h-pad">
         <h2>Florida Native Plants</h2>
+        
         <p>
           Dive into the world of Florida's native plants, perfect for creating a low-maintenance, eco-friendly garden that supports local wildlife.
         </p>

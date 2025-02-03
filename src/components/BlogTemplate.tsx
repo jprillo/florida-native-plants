@@ -11,6 +11,8 @@ type BlogTemplateProps = {
     description: string;
     color1: string;
     featuredImage: string;
+    tags: string[];
+    date: string;
   };
   mdxSource: MDXRemoteSerializeResult;
 };
@@ -22,21 +24,36 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ frontmatter, mdxSource }) =
     description,
     color1,
     featuredImage,
+    tags,
+    date,
   } = frontmatter;
 
+
+    // Format the date
+    const formattedDate = new Date(date).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
   return (
-    <div className="plant-container h-pad">
+    <div className="plant-container h-pad pad-top">
       {/* Title Section */}
       <h1 className="title" >{title}</h1>
-      <h2 className="subtitle">{author}</h2>
-      <p className="description">{description}</p>
+      <div className="flex">
+      <p>{formattedDate}</p>
+      <p >{author}</p>
+      <div className="tags-container">
+        {tags.map((tag, index) => (
+          <span key={index} className="tag">{tag}</span>
+        ))}
+      </div>
+
+      </div>
+
+            {/* Animated Line */}
+            <div style={{backgroundColor: color1}} className="animated-line"></div>
       <img  style={{textAlign: "center"}} className="featured-image" src={featuredImage} alt={title} />
-
-
-
-
-
-
+      <p style={{maxWidth: "800px"}} className="description">{description}</p>
       {/* Additional MDX Content */}
       <div className="additional-content">
         <MDXRemote {...mdxSource} />

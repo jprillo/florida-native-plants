@@ -101,6 +101,7 @@ h1{
     font-size: 18px;
     color: $text-color;
     font-family: $secondary-font;
+    max-width: 800px;
 
   @include breakpoint(md){
       font-size: 20px;

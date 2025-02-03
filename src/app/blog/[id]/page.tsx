@@ -11,6 +11,8 @@ type BlogFrontmatter = {
   description: string;
   color1: string;
   featuredImage: string;
+  tags: string[];
+  date: string;
 
 };
 
