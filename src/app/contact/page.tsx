@@ -11,7 +11,7 @@ export default function ContactPage() {
       <div className="contact-page__form-wrapper">
         <h1 className="contact-page__title">Contact Us</h1>
         <p className="contact-page__description">
-          Have questions or feedback? We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.
+      
         </p>
         <form
           name="contact" // Name of the form for Netlify
