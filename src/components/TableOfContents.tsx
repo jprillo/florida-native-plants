@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import "../styles/TableOfContents.scss"; // Import your SCSS file
 
 // Define a type for our section objects
@@ -12,7 +12,7 @@ type Section = {
 // List of sections to link to
 const sections: Section[] = [
 
-  
+
   { id: 'egg', title: 'Egg' },
   { id: 'caterpillar', title: 'Caterpillar' },
   { id: 'chrysalis', title: 'Chrysalis' },

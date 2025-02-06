@@ -20,14 +20,14 @@ const HomePage = async () => {
         <div className="hero-content">
           <h1>Florida Native Plants and Butterflies</h1>
           <p>
-            Explore the beauty of Florida's native plants and butterflies, learn how to create a thriving garden, and discover how to support your local ecosystem.
+            Explore the beauty of Florida&apos;s native plants and butterflies, learn how to create a thriving garden, and discover how to support your local ecosystem.
           </p>
         </div>
       </header>
 
       {/* Section for Butterflies */}
       <section className="section h-pad">
-        <h2>Discover Florida's Butterflies</h2>
+        <h2>Discover Florida&apos;s Butterflies</h2>
         <p>
           Learn about the vibrant butterflies that call Florida home. Explore their life cycles, habitats, and how to attract them to your garden.
         </p>
@@ -41,9 +41,9 @@ const HomePage = async () => {
       {/* Section for Plants */}
       <section className="section h-pad">
         <h2>Florida Native Plants</h2>
-        
+
         <p>
-          Dive into the world of Florida's native plants, perfect for creating a low-maintenance, eco-friendly garden that supports local wildlife.
+          Dive into the world of Florida&apos;s native plants, perfect for creating a low-maintenance, eco-friendly garden that supports local wildlife.
         </p>
 
         <PlantsList plants={plants} />

@@ -131,6 +131,11 @@ const ButterflyTemplate: React.FC<ButterflyTemplateProps> = ({
           <div className="info-box" style={{ backgroundColor: color }}>
             <h3>Did you know?</h3>
             <p>{interestingFactsTwo}</p>
+            <p>{  migration} {flightSpeed}
+  {conservationStatus}
+ { culturalSignificance}
+{  predatorsAndThreats}</p>
+
           </div>
           <div className="ad-box">
             <h3>Does your business need a leg up? Formal Flamingo Digital Marketing</h3>
