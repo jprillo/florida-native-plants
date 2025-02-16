@@ -9,6 +9,36 @@ export type Butterfly = {
   latinName: string;
   imageOne: string;
 };
+import { GetStaticProps, GetStaticPaths } from "next";
+
+
+type ButterflyPageProps = {
+  butterfly: Butterfly;
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const butterflies = await getButterflies();
+
+  return {
+    paths: butterflies.map((butterfly) => ({
+      params: { id: butterfly.id },
+    })),
+    fallback: false, // Set to `true` or `blocking` if you want to allow new pages dynamically
+  };
+};
+
+export const getStaticProps: GetStaticProps<ButterflyPageProps> = async ({ params }) => {
+  const butterflies = await getButterflies();
+  const butterfly = butterflies.find((b) => b.id === params?.id);
+
+  if (!butterfly) {
+    return { notFound: true };
+  }
+
+  return {
+    props: { butterfly },
+  };
+};
 
 export async function getButterflies(): Promise<Butterfly[]> {
   const butterfliesDir = path.join(process.cwd(), "content/butterflies");
