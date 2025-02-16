@@ -1,9 +1,9 @@
-import fs from "fs";
+import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import PlantTemplate from "../../../components/PlantTemplate";
+import { notFound } from "next/navigation";
 
 type PlantFrontmatter = {
   commonName: string;
@@ -34,53 +34,52 @@ type PlantFrontmatter = {
 };
 
 type PlantPageProps = {
-  params: {
-    id: string;
-  };
+  params: { id: string } | Promise<{ id: string }>;
 };
 
-// Generate static paths for all MDX files in `content/plants`
 export async function generateStaticParams() {
-  const filePath = path.join(process.cwd(), "content/plants");
-  const files = fs.readdirSync(filePath);
+  const plantsDir = path.join(process.cwd(), "content/plants");
+  const files = await fs.readdir(plantsDir);
 
-  // Filter `.mdx` files and generate paths
-  const mdxFiles = files.filter((file) => file.endsWith(".mdx"));
-  console.log("Found MDX Files:", mdxFiles);
-
-  return mdxFiles.map((filename) => ({
-    id: filename.replace(".mdx", ""), // Remove the `.mdx` extension
-  }));
+  return files
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => ({
+      id: file.replace(".mdx", ""),
+    }));
 }
 
-// Render the plant page dynamically based on the `id` parameter
 export default async function PlantPage({ params }: PlantPageProps) {
   try {
-    const filePath = await path.join("content/plants", `${ params.id}.mdx`);
+    // Await params to get the id dynamically
+    const { id } = await params;
 
-    // Check if the `.mdx` file exists
-    if (!fs.existsSync(filePath)) {
+    // Resolve the file path dynamically
+    const filePath = path.join(process.cwd(), "content/plants", `${id}.mdx`);
+
+    // Check if the file exists. If it doesn't, trigger a 404 page.
+    try {
+      await fs.access(filePath);
+    } catch (error) {
       console.error(`File not found: ${filePath}`);
-      return { notFound: true }; // Return a 404 page if the file is missing
+      notFound();
     }
 
-    // Read the content of the file
-    const fileContents = fs.readFileSync(filePath, "utf8");
+    // Read the file contents asynchronously
+    const fileContents = await fs.readFile(filePath, "utf8");
 
-    // Parse frontmatter and content using `gray-matter`
+    // Parse the MDX file (frontmatter + content)
     const { data, content } = matter(fileContents);
 
-    // Serialize the MDX content
+    // Serialize the MDX content, passing frontmatter as scope if needed
+    const mdxSource = await serialize(content, { scope: data });
 
-// Pass the frontmatter as `scope` to serialize
-const mdxSource: MDXRemoteSerializeResult = await serialize(content, { scope: data });
-    // Pass the frontmatter and serialized content to the `PlantTemplate` component
+    // Cast frontmatter to the correct type
+    const frontmatter = data as PlantFrontmatter;
 
-    return (
-      <PlantTemplate frontmatter={data as PlantFrontmatter} mdxSource={mdxSource} />
-    );
+    // Render the PlantTemplate component with the parsed data
+    return <PlantTemplate frontmatter={frontmatter} mdxSource={mdxSource} />;
   } catch (error) {
     console.error("Error rendering plant page:", error);
-    return { notFound: true }; // Gracefully handle unexpected errors
+    notFound();
   }
 }

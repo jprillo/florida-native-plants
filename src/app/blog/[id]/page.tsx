@@ -1,8 +1,7 @@
-import fs from "fs";
+import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import BlogTemplate from "../../../components/BlogTemplate";
 import { notFound } from "next/navigation";
 
@@ -17,47 +16,44 @@ type BlogFrontmatter = {
 };
 
 type BlogPageProps = {
-  params: { id: string };
+  params: { id: string } | Promise<{ id: string }>;
 };
 
-// Generate static paths for all MDX files in `content/blog`
 export async function generateStaticParams() {
-  const filePath = path.join(process.cwd(), "content/blog");
-  const files = fs.readdirSync(filePath);
+  const blogDir = path.join(process.cwd(), "content/blog");
+  const files = await fs.readdir(blogDir);
 
-  // Filter `.mdx` files and generate paths
-  const mdxFiles = files.filter((file) => file.endsWith(".mdx"));
-  console.log("Found MDX Files:", mdxFiles);
-
-  return mdxFiles.map((filename) => ({
-    id: filename.replace(".mdx", ""), // Remove the `.mdx` extension
-  }));
+  return files
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => ({
+      id: file.replace(".mdx", ""),
+    }));
 }
 
-// Render the blog page dynamically based on the `id` parameter
 export default async function BlogPage({ params }: BlogPageProps) {
   try {
-    const filePath = path.join("content/blog", `${params.id}.mdx`);
+    // Await params to get the id dynamically
+    const { id } = await params;
 
-    // Check if the `.mdx` file exists
-    if (!fs.existsSync(filePath)) {
-      console.error(`File not found: ${filePath}`);
-      notFound(); // Properly handle missing files
-    }
+    // Resolve the file path dynamically
+    const filePath = path.join(process.cwd(), "content/blog", `${id}.mdx`);
 
-    // Read the content of the file
-    const fileContents = fs.readFileSync(filePath, "utf8");
+    // Read the file contents asynchronously
+    const fileContents = await fs.readFile(filePath, "utf8");
 
-    // Parse frontmatter and content using `gray-matter`
+    // Parse the MDX file (frontmatter + content)
     const { data, content } = matter(fileContents);
 
     // Serialize the MDX content
-    const mdxSource: MDXRemoteSerializeResult = await serialize(content, { scope: data });
+    const mdxSource = await serialize(content);
 
-    // Return JSX instead of an object
-    return <BlogTemplate frontmatter={data as BlogFrontmatter} mdxSource={mdxSource} />;
+    // Cast frontmatter to the correct type
+    const frontmatter = data as BlogFrontmatter;
+
+    // Render the BlogTemplate component with the parsed data
+    return <BlogTemplate frontmatter={frontmatter} mdxSource={mdxSource} />;
   } catch (error) {
     console.error("Error rendering blog page:", error);
-    notFound(); // Gracefully handle unexpected errors
+    notFound();
   }
 }
