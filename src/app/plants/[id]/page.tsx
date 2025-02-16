@@ -60,7 +60,7 @@ export default async function PlantPage({ params }: PlantPageProps) {
     try {
       await fs.access(filePath);
     } catch (error) {
-      console.error(`File not found: ${filePath}`);
+      console.error(`File not found: ${filePath}`, error);
       notFound();
     }
 
