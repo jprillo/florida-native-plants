@@ -36,7 +36,7 @@ export async function generateStaticParams() {
 export default async function ButterflyPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   try {
     // Access the parameter dynamically

@@ -33,8 +33,9 @@ type PlantFrontmatter = {
   imageThree: string;
 };
 
+// Update the type to always have a thenable `params`
 type PlantPageProps = {
-  params: { id: string } | Promise<{ id: string }>;
+  params: Promise<{ id: string }>;
 };
 
 export async function generateStaticParams() {
@@ -50,13 +51,13 @@ export async function generateStaticParams() {
 
 export default async function PlantPage({ params }: PlantPageProps) {
   try {
-    // Await params to get the id dynamically
+    // Await params to satisfy Next 15's internal type constraints.
     const { id } = await params;
 
-    // Resolve the file path dynamically
+    // Build the file path dynamically.
     const filePath = path.join(process.cwd(), "content/plants", `${id}.mdx`);
 
-    // Check if the file exists. If it doesn't, trigger a 404 page.
+    // Check if the file exists. If not, trigger a 404.
     try {
       await fs.access(filePath);
     } catch (error) {
@@ -64,19 +65,19 @@ export default async function PlantPage({ params }: PlantPageProps) {
       notFound();
     }
 
-    // Read the file contents asynchronously
+    // Read the file contents asynchronously.
     const fileContents = await fs.readFile(filePath, "utf8");
 
-    // Parse the MDX file (frontmatter + content)
+    // Parse the MDX file (frontmatter + content).
     const { data, content } = matter(fileContents);
 
-    // Serialize the MDX content, passing frontmatter as scope if needed
+    // Serialize the MDX content, passing frontmatter as scope if needed.
     const mdxSource = await serialize(content, { scope: data });
 
-    // Cast frontmatter to the correct type
+    // Cast frontmatter to the correct type.
     const frontmatter = data as PlantFrontmatter;
 
-    // Render the PlantTemplate component with the parsed data
+    // Render the PlantTemplate component with the parsed data.
     return <PlantTemplate frontmatter={frontmatter} mdxSource={mdxSource} />;
   } catch (error) {
     console.error("Error rendering plant page:", error);

@@ -4,6 +4,7 @@ import React from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import "../styles/PlantTemplate.scss";
 import TableOfContents from "../components/TableOfContents";
+import Image from 'next/image'
 
 type PlantTemplateProps = {
   frontmatter: {
